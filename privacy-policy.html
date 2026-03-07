@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — ATS ScoreCard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0f1e;
+      --surface: #111827;
+      --border: rgba(255,255,255,0.07);
+      --accent: #3b82f6;
+      --accent2: #6366f1;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --green: #10b981;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Background mesh */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 10%, rgba(59,130,246,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(99,102,241,0.06) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 64px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 12px;
+    }
+
+    ul li {
+      color: #94a3b8;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+      top: 8px;
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: rgba(16,185,129,0.05);
+      border: 1px solid rgba(16,185,129,0.15);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+    }
+
+    .highlight p {
+      color: #6ee7b7;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-top: 56px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      margin-bottom: 16px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+
+    .contact-card a:hover { opacity: 0.85; }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="site-header">
+      <div class="logo-icon">✓</div>
+      <span class="logo-text">ATS ScoreCard</span>
+    </header>
+
+    <div class="hero">
+      <div class="tag">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="hero-meta">Last updated: March 2026 &nbsp;·&nbsp; Effective immediately</p>
+    </div>
+
+    <div class="section">
+      <h2>Overview</h2>
+      <div class="highlight">
+        <p>ATS ScoreCard is built with your privacy first. We do not sell, share, or monetize your personal data in any way.</p>
+      </div>
+      <p>This Privacy Policy explains what information ATS ScoreCard ("we", "our", or "the extension") collects, how it is used, and your rights regarding your data.</p>
+    </div>
+
+    <div class="section">
+      <h2>Information We Collect</h2>
+      <p>We collect only the minimum data required to operate the extension:</p>
+      <ul>
+        <li><strong>Email address</strong> — used to create and identify your account</li>
+        <li><strong>Resume text</strong> — extracted locally from your uploaded PDF/DOC file to perform keyword matching. Stored only in your browser's local storage.</li>
+        <li><strong>ATS scan results</strong> — score, matched keywords, and missing keywords saved to your account history</li>
+        <li><strong>Plan status</strong> — whether you are on the free trial or a paid plan</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Information We Do NOT Collect</h2>
+      <ul>
+        <li>We do not collect your full resume file — only extracted text</li>
+        <li>We do not collect payment card details (handled by Gumroad)</li>
+        <li>We do not collect browsing history or any data from pages you visit</li>
+        <li>We do not use advertising trackers or third-party analytics</li>
+        <li>We do not sell your data to any third party</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>How We Use Your Data</h2>
+      <ul>
+        <li>To authenticate your account and maintain your login session</li>
+        <li>To perform ATS keyword matching between your resume and job descriptions</li>
+        <li>To track your trial scan usage (free plan: 3 scans)</li>
+        <li>To store your scan history so you can review past results</li>
+        <li>To manage your premium subscription status</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Data Storage</h2>
+      <p>Your account data (email, plan, scan history) is stored securely in Supabase, a GDPR-compliant database provider. Resume text is stored locally in your browser using Chrome's storage API and is never transmitted to our servers.</p>
+    </div>
+
+    <div class="section">
+      <h2>Third-Party Services</h2>
+      <ul>
+        <li><strong>Supabase</strong> — authentication and database (supabase.com)</li>
+        <li><strong>Gumroad</strong> — payment processing for premium plans (gumroad.com)</li>
+      </ul>
+      <p>These services have their own privacy policies. We do not control their data practices.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data Retention</h2>
+      <p>Your data is retained as long as your account is active. You can request deletion of your account and all associated data at any time by contacting us.</p>
+    </div>
+
+    <div class="section">
+      <h2>Your Rights</h2>
+      <ul>
+        <li>Right to access your personal data</li>
+        <li>Right to correct inaccurate data</li>
+        <li>Right to delete your account and data</li>
+        <li>Right to export your data</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Children's Privacy</h2>
+      <p>ATS ScoreCard is not directed at children under 13. We do not knowingly collect data from children.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to This Policy</h2>
+      <p>We may update this policy occasionally. Significant changes will be communicated via the extension or email. Continued use after changes constitutes acceptance.</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Questions or Data Requests?</h3>
+      <p>Contact us anytime — we respond within 48 hours.</p>
+      <a href="mailto:chandiniuae0210@gmail.com">chandiniuae0210@gmail.com</a>
+    </div>
+
+    <footer>
+      © 2026 ATS ScoreCard · All rights reserved
+    </footer>
+
+  </div>
+</body>
+</html>
